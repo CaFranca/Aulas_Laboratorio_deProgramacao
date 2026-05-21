@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Lista de Livros{% endblock %}
+
+{% block content %}
+<h2>Livros cadastrados</h2>
+
+<ul>
+{% for livro in livros %}
+<li>
+<a href="/livros/{{ livro.id }}/">
+{{ livro.titulo }}
+</a>
+</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
