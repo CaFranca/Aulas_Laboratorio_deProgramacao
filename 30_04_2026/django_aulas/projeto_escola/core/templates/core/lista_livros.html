@@ -5,14 +5,18 @@
 {% block content %}
 <h2>Livros cadastrados</h2>
 
-<ul>
+<ul class="item-list">
 {% for livro in livros %}
 <li>
-<a href="/livros/{{ livro.id }}/">
-{{ livro.titulo }}
-</a>
+<strong>{{ livro.titulo }}</strong>
+<a class="button" href="/livros/{{ livro.id }}/">Ver detalhes</a>
 </li>
 {% endfor %}
 </ul>
+
+<div class="actions">
+    <a class="button secondary" href="/">Inicio</a>
+    <a class="button secondary" href="/alunos/">Ver alunos</a>
+</div>
 
 {% endblock %}

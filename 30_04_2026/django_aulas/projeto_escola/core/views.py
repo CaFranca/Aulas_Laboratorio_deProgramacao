@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Livro
+from .models import Aluno, Livro
 
 
 def inicio(request):
@@ -29,3 +29,13 @@ def lista_livros(request):
 def detalhe_livro(request, id):
     livro = get_object_or_404(Livro, id=id)
     return render(request, 'core/detalhe_livro.html', {'livro': livro})
+
+
+def lista_alunos(request):
+    alunos = Aluno.objects.all()
+    return render(request, 'core/lista_alunos.html', {'alunos': alunos})
+
+
+def detalhe_aluno(request, id):
+    aluno = get_object_or_404(Aluno, id=id)
+    return render(request, 'core/detalhe_aluno.html', {'aluno': aluno})
